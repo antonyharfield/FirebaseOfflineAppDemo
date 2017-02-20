@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="j8I-L7-1Dg">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Firebase Storage Demo-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OpE-oJ-cw1">
+                                <rect key="frame" x="26" y="87" width="323" height="180"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpw-FP-ZDn">
+                                        <rect key="frame" x="0.0" y="0.0" width="323" height="60"/>
+                                        <state key="normal" title="No caching"/>
+                                        <connections>
+                                            <segue destination="Y4J-di-bbZ" kind="show" id="clB-uc-FxF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lK9-d4-RGv">
+                                        <rect key="frame" x="0.0" y="60" width="323" height="60"/>
+                                        <state key="normal" title="Using NSCache"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBP-WN-ydd">
+                                        <rect key="frame" x="0.0" y="120" width="323" height="60"/>
+                                        <state key="normal" title="Using FirebaseStorageCache"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="F6c-R4-XUG"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OpE-oJ-cw1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="GrV-Pp-VGE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OpE-oJ-cw1" secondAttribute="trailing" constant="10" id="XSt-gD-kIL"/>
+                            <constraint firstItem="OpE-oJ-cw1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="cbv-s1-o3C"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Firebase Storage Demo" id="3Gp-Cr-roa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="807.20000000000005" y="-559.07046476761627"/>
+        </scene>
+        <!--Firebase Events in Bangkok-->
+        <scene sceneID="5wL-ex-yzh">
+            <objects>
+                <viewController id="Y4J-di-bbZ" customClass="EventsViewController" customModule="FirebaseOfflineAppDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VS8-bb-sFd"/>
+                        <viewControllerLayoutGuide type="bottom" id="dlD-fg-NZz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aHC-lY-TNV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CEX-a4-85Z">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="dsG-du-5Zk">
+                                        <rect key="frame" x="177" y="267" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEV-oh-7AZ">
+                                        <rect key="frame" x="149.5" y="291" width="75" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="XEV-oh-7AZ" firstAttribute="centerX" secondItem="CEX-a4-85Z" secondAttribute="centerX" id="5ol-Jc-BPr"/>
+                                    <constraint firstItem="dsG-du-5Zk" firstAttribute="centerX" secondItem="CEX-a4-85Z" secondAttribute="centerX" id="EQv-O0-2th"/>
+                                    <constraint firstItem="XEV-oh-7AZ" firstAttribute="centerY" secondItem="CEX-a4-85Z" secondAttribute="centerY" id="NNa-V3-b9Z"/>
+                                    <constraint firstItem="XEV-oh-7AZ" firstAttribute="top" secondItem="dsG-du-5Zk" secondAttribute="bottom" constant="4" id="jfT-ek-NAD"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Jg-ML-zgy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventcell" rowHeight="200" id="iyj-gE-9pr" customClass="EventTableViewCell" customModule="FirebaseOfflineAppDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iyj-gE-9pr" id="yf5-hD-kPn">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EL0-xz-aEQ">
+                                                    <rect key="frame" x="8" y="8" width="359" height="184"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="184" id="Yyk-nB-P96"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="EL0-xz-aEQ" firstAttribute="leading" secondItem="yf5-hD-kPn" secondAttribute="leadingMargin" id="77U-Rb-QPJ"/>
+                                                <constraint firstItem="EL0-xz-aEQ" firstAttribute="bottom" secondItem="yf5-hD-kPn" secondAttribute="bottomMargin" id="BIO-qi-6PF"/>
+                                                <constraint firstItem="EL0-xz-aEQ" firstAttribute="trailing" secondItem="yf5-hD-kPn" secondAttribute="trailingMargin" id="D2C-AM-FdO"/>
+                                                <constraint firstItem="EL0-xz-aEQ" firstAttribute="top" secondItem="yf5-hD-kPn" secondAttribute="topMargin" id="ZB0-ic-lkY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="backgroundImageView" destination="EL0-xz-aEQ" id="sSF-cj-SVr"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="3Jg-ML-zgy" secondAttribute="trailing" id="4aB-c5-W6m"/>
+                            <constraint firstItem="CEX-a4-85Z" firstAttribute="leading" secondItem="aHC-lY-TNV" secondAttribute="leading" id="PIG-T4-Yzm"/>
+                            <constraint firstItem="3Jg-ML-zgy" firstAttribute="leading" secondItem="aHC-lY-TNV" secondAttribute="leading" id="TBr-cd-oPf"/>
+                            <constraint firstItem="dlD-fg-NZz" firstAttribute="top" secondItem="CEX-a4-85Z" secondAttribute="bottom" id="cOG-ri-uzS"/>
+                            <constraint firstItem="dlD-fg-NZz" firstAttribute="top" secondItem="3Jg-ML-zgy" secondAttribute="bottom" id="gOg-bn-mPk"/>
+                            <constraint firstAttribute="trailing" secondItem="CEX-a4-85Z" secondAttribute="trailing" id="niG-h4-F9O"/>
+                            <constraint firstItem="CEX-a4-85Z" firstAttribute="top" secondItem="VS8-bb-sFd" secondAttribute="bottom" id="pKd-rS-GHv"/>
+                            <constraint firstItem="3Jg-ML-zgy" firstAttribute="top" secondItem="aHC-lY-TNV" secondAttribute="top" id="ySR-ME-73k"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Firebase Events in Bangkok" id="zBx-VX-gO1"/>
+                    <connections>
+                        <outlet property="loadingView" destination="CEX-a4-85Z" id="ZhU-7n-ybb"/>
+                        <outlet property="tableView" destination="3Jg-ML-zgy" id="MZj-RJ-kbm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cj3-Qq-m4k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1629.5999999999999" y="-559.07046476761627"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XcC-YD-4Jl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j8I-L7-1Dg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JGa-dF-CDk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="YXY-zZ-6fZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eEJ-tI-qj2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="48.799999999999997" y="-559.07046476761627"/>
+        </scene>
+    </scenes>
+</document>

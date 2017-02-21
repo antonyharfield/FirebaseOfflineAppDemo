@@ -12,9 +12,12 @@ import FirebaseStorageCache
 class EventTableViewCell: UITableViewCell {
     
     @IBOutlet var backgroundImageView: UIImageView!
+    
+    override func prepareForReuse() {
+        backgroundImageView.image = nil
+    }
 
     func set(event: Event) {
-        contentView.backgroundColor = UIColor.yellow
         let ref = Files.imageReference(imageName: event.imageName)
         backgroundImageView.setImage(storageReference: ref)
     }

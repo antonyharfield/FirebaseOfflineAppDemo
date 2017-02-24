@@ -11,25 +11,32 @@ import UIKit
 extension UIImageView {
     
     public func setImage(url: URL) {
-        
-        URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
-            
-            guard let httpURLResponse = response as? HTTPURLResponse,
-                error == nil, httpURLResponse.statusCode == 200 else {
-                    print(error?.localizedDescription ?? "Error status code \((response as? HTTPURLResponse)?.statusCode)")
-                    return
-            }
-            
-            guard let data = data, let image = UIImage(data: data) else {
-                print("No image data found")
-                return
-            }
-            
+        downloadImage(url: url) { (image) in
             DispatchQueue.main.async(execute: {
                 self.image = image
             })
-        }).resume()
-        
+        }
     }
+}
+
+// MARK: Helper
+
+func downloadImage(url: URL, completion: ((UIImage) -> ())? = nil) {
     
+    URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+        
+        guard let httpURLResponse = response as? HTTPURLResponse,
+            error == nil, httpURLResponse.statusCode == 200 else {
+                print(error?.localizedDescription ?? "Error status code \((response as? HTTPURLResponse)?.statusCode)")
+                return
+        }
+        
+        guard let data = data, let image = UIImage(data: data) else {
+            print("No image data found")
+            return
+        }
+        
+        completion?(image)
+        
+    }).resume()
 }

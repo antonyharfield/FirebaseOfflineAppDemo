@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A420CFD3011881DBD7E08DDF /* Pods_FirebaseOfflineAppDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EF08BAB5FA4EE0D61CEC670 /* Pods_FirebaseOfflineAppDemo.framework */; };
+		ED53D0EF1E6044BB00E49E2F /* FullCacheEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53D0EE1E6044BB00E49E2F /* FullCacheEventTableViewCell.swift */; };
+		ED53D0F21E60492A00E49E2F /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53D0F11E60492A00E49E2F /* UIImageView+URL.swift */; };
+		ED53D0F41E604D6500E49E2F /* BasicCacheEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53D0F31E604D6500E49E2F /* BasicCacheEventTableViewCell.swift */; };
 		EDC323EA1E5B51EF00DC0A49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC323E91E5B51EF00DC0A49 /* AppDelegate.swift */; };
 		EDC323EF1E5B51EF00DC0A49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC323ED1E5B51EF00DC0A49 /* Main.storyboard */; };
 		EDC323F11E5B51F000DC0A49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDC323F01E5B51F000DC0A49 /* Assets.xcassets */; };
@@ -25,6 +28,9 @@
 		203863E4C72BA846CE6A9226 /* Pods-FirebaseOfflineAppDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseOfflineAppDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseOfflineAppDemo/Pods-FirebaseOfflineAppDemo.release.xcconfig"; sourceTree = "<group>"; };
 		2EF08BAB5FA4EE0D61CEC670 /* Pods_FirebaseOfflineAppDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseOfflineAppDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91D12E36CB21121F2D83BDA0 /* Pods-FirebaseOfflineAppDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseOfflineAppDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseOfflineAppDemo/Pods-FirebaseOfflineAppDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		ED53D0EE1E6044BB00E49E2F /* FullCacheEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullCacheEventTableViewCell.swift; sourceTree = "<group>"; };
+		ED53D0F11E60492A00E49E2F /* UIImageView+URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
+		ED53D0F31E604D6500E49E2F /* BasicCacheEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCacheEventTableViewCell.swift; sourceTree = "<group>"; };
 		EDC323E61E5B51EF00DC0A49 /* FirebaseOfflineAppDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseOfflineAppDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC323E91E5B51EF00DC0A49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDC323EE1E5B51EF00DC0A49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -69,6 +75,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		ED53D0F01E6048F300E49E2F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ED53D0F11E60492A00E49E2F /* UIImageView+URL.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		EDC323DD1E5B51EF00DC0A49 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +110,7 @@
 				EDC324091E5B56AC00DC0A49 /* Views */,
 				EDC324071E5B568500DC0A49 /* Models */,
 				EDC324081E5B568E00DC0A49 /* Data Access */,
+				ED53D0F01E6048F300E49E2F /* Extensions */,
 				EDC323ED1E5B51EF00DC0A49 /* Main.storyboard */,
 				EDC323F01E5B51F000DC0A49 /* Assets.xcassets */,
 				EDC323F21E5B51F000DC0A49 /* LaunchScreen.storyboard */,
@@ -126,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				EDC323FD1E5B55E900DC0A49 /* EventTableViewCell.swift */,
+				ED53D0F31E604D6500E49E2F /* BasicCacheEventTableViewCell.swift */,
+				ED53D0EE1E6044BB00E49E2F /* FullCacheEventTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -255,10 +272,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED53D0F41E604D6500E49E2F /* BasicCacheEventTableViewCell.swift in Sources */,
+				ED53D0EF1E6044BB00E49E2F /* FullCacheEventTableViewCell.swift in Sources */,
 				EDC324051E5B55E900DC0A49 /* Database.swift in Sources */,
 				EDC324031E5B55E900DC0A49 /* EventTableViewCell.swift in Sources */,
 				EDC324061E5B55E900DC0A49 /* Files.swift in Sources */,
 				EDC323EA1E5B51EF00DC0A49 /* AppDelegate.swift in Sources */,
+				ED53D0F21E60492A00E49E2F /* UIImageView+URL.swift in Sources */,
 				EDC324021E5B55E900DC0A49 /* EventPageViewController.swift in Sources */,
 				EDC324011E5B55E900DC0A49 /* EventsViewController.swift in Sources */,
 				EDC324041E5B55E900DC0A49 /* Event.swift in Sources */,

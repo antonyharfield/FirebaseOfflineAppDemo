@@ -1,26 +1,17 @@
 //
-//  EventTableViewCell.swift
-//  FirebaseStorageCache
+//  BasicCacheEventTableViewCell.swift
+//  FirebaseOfflineAppDemo
 //
-//  Created by Ant on 20/02/2017.
+//  Created by Ant on 24/02/2017.
 //  Copyright © 2017 Apptitude. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import FirebaseStorage
 
-class EventTableViewCell: UITableViewCell {
+class BasicCacheEventTableViewCell: EventTableViewCell {
     
-    @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var backgroundImageView: UIImageView!
-    
-    override func prepareForReuse() {
-        backgroundImageView.image = nil
-    }
-    
-    func set(event: Event) {
-        titleLabel.text = event.title
-        
+    override func set(event: Event) {
         // Create a storage reference
         let rootRef = FIRStorage.storage().reference()
         let imageRef = rootRef.child("images").child(event.imageName)

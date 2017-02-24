@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 import FirebaseStorageCache
 
-class EventPageViewController: UIViewController {
+class EventPageViewController: UIViewController, WKNavigationDelegate {
 
     var event: Event?
     
@@ -22,6 +22,7 @@ class EventPageViewController: UIViewController {
         super.viewDidLoad()
         
         webView = WKWebView()
+        webView.navigationDelegate = self
         webView.translatesAutoresizingMaskIntoConstraints = false
         webContainerView.addSubview(webView)
         webView.topAnchor.constraint(equalTo: webContainerView.topAnchor).isActive = true
@@ -35,20 +36,38 @@ class EventPageViewController: UIViewController {
     func loadWebView() {
         
         loadingView.isHidden = false
-        webView.isHidden = true
+        webContainerView.isHidden = true
         
         if let event = event, event.pageName != "" {
+            
+            title = event.title
+            
             let ref = Files.pageReference(pageName: event.pageName)
             
-            FirebaseStorageCache.main.get(storageReference: ref, completion: { (data) in
-                if let data = data {
-                    self.webView.load(data, mimeType: "text/html", characterEncodingName: "utf-8", baseURL: URL(fileURLWithPath: ""))
-                    self.webView.isHidden = false
-                    self.loadingView.isHidden = true
-                }
-            })
+//            FirebaseStorageCache.main.get(storageReference: ref, completion: { (data) in
+//                if let data = data {
+//                    self.webView.load(data, mimeType: "text/html", characterEncodingName: "utf-8", baseURL: URL(fileURLWithPath: ""))
+//                }
+//            })
             
+//            webView.loadHTML(storageReference: ref)
+            webView.loadHTML(storageReference: ref) { data in
+                let pre = ["<!doctype html>",
+                           "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+                           "<style>",
+                           "body { margin: 8px; font-size: 15px; font-family: -apple-system } ",
+                           "b { color: #039be5 } img { max-width: 100% } ",
+                           "</style>"]
+                var preData = pre.joined().data(using: .utf8) ?? Data()
+                preData.append(data)
+                return preData
+            }
         }
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        self.webContainerView.isHidden = false
+        self.loadingView.isHidden = true
     }
     
 }

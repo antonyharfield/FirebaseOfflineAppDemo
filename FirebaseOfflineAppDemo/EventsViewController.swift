@@ -31,6 +31,14 @@ class EventsViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let indexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let pageViewController = segue.destination as? EventPageViewController, let events = events, let indexPath = tableView.indexPathForSelectedRow {
             pageViewController.event = events[indexPath.row]

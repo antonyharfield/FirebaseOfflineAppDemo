@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseCore
+import FirebaseStorageCache
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FIRApp.configure()
         Database.setup()
+        FirebaseStorageCache.main.prune()
         
         return true
     }

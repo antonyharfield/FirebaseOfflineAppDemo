@@ -17,7 +17,7 @@ class Database {
     private static let eventsRef = databaseRef.child("events")
     
     static func setup() {
-        //FIRDatabase.database().persistenceEnabled = true
+        FIRDatabase.database().persistenceEnabled = true
     }
     
     static func events(completion: @escaping ([Event]) -> ()) {

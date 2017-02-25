@@ -7,5 +7,5 @@ target 'FirebaseOfflineAppDemo' do
   pod 'Firebase/Storage'
   pod 'Firebase/Database'
   pod 'FirebaseStorageCache'
-
+  
 end

@@ -22,12 +22,13 @@ class BasicCacheEventTableViewCell: EventTableViewCell {
         
         let cacheKey = imageRef.fullPath as NSString
         
+        // If in the cache then set image
         if let cachedImage = cache.object(forKey: cacheKey) {
             self.backgroundImageView.image = cachedImage
-        } else {
+        }
+        else {
             // Download the URL
             imageRef.downloadURL { (url, error) in
-                
                 if let error = error {
                     print(error.localizedDescription)
                     return
@@ -41,7 +42,7 @@ class BasicCacheEventTableViewCell: EventTableViewCell {
                         self.backgroundImageView.image = image
                     })
                     
-                    // save cache
+                    // Save image in cache
                     cache.setObject(image, forKey: cacheKey)
                 })
             }

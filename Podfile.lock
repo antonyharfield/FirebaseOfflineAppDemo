@@ -20,7 +20,7 @@ PODS:
   - FirebaseStorage (1.0.6):
     - FirebaseAnalytics (~> 3.7)
     - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseStorageCache (0.0.3):
+  - FirebaseStorageCache (0.0.4):
     - Firebase/Core
     - Firebase/Storage
   - GoogleToolboxForMac/Defines (2.1.1)
@@ -41,10 +41,10 @@ SPEC CHECKSUMS:
   FirebaseDatabase: 05c96d7b43a7368dc91c07791adb49683e1738d1
   FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
   FirebaseStorage: 63628572a5fde258f8e933b5fb42697468da0158
-  FirebaseStorageCache: a087c8af82033be5426720063a300ecb03658661
+  FirebaseStorageCache: 3a664c0cea7b99b06171d1469c3627a5269c41f5
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
 
-PODFILE CHECKSUM: b4ff8b6967b6aceb52d62bc37707101fb9afdbd6
+PODFILE CHECKSUM: e25ed9a5e3bf2a48bbfacea93c09b4927ed31e55
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0

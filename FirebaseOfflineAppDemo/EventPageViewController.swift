@@ -44,13 +44,6 @@ class EventPageViewController: UIViewController, WKNavigationDelegate {
             
             let ref = Files.pageReference(pageName: event.pageName)
             
-//            FirebaseStorageCache.main.get(storageReference: ref, completion: { (data) in
-//                if let data = data {
-//                    self.webView.load(data, mimeType: "text/html", characterEncodingName: "utf-8", baseURL: URL(fileURLWithPath: ""))
-//                }
-//            })
-            
-//            webView.loadHTML(storageReference: ref)
             webView.loadHTML(storageReference: ref) { data in
                 let pre = ["<!doctype html>",
                            "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",

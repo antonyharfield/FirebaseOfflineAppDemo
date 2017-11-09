@@ -17,7 +17,7 @@ class BasicCacheEventTableViewCell: EventTableViewCell {
         titleLabel.text = event.title
         
         // Create a storage reference
-        let rootRef = FIRStorage.storage().reference()
+        let rootRef = Storage.storage().reference()
         let imageRef = rootRef.child("images").child(event.imageName)
         
         let cacheKey = imageRef.fullPath as NSString

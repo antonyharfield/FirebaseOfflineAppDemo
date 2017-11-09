@@ -22,7 +22,7 @@ class EventTableViewCell: UITableViewCell {
         titleLabel.text = event.title
         
         // Create a storage reference
-        let rootRef = FIRStorage.storage().reference()
+        let rootRef = Storage.storage().reference()
         let imageRef = rootRef.child("images").child(event.imageName)
         
         // Download the URL

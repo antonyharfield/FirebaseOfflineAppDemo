@@ -11,13 +11,13 @@ import FirebaseStorage
 
 class Files {
     
-    private static let storageRef = FIRStorage.storage().reference()
+    private static let storageRef = Storage.storage().reference()
     
-    static func imageReference(imageName: String) -> FIRStorageReference {
+    static func imageReference(imageName: String) -> StorageReference {
         return storageRef.child("images").child(imageName)
     }
     
-    static func pageReference(pageName: String) -> FIRStorageReference {
+    static func pageReference(pageName: String) -> StorageReference {
         return storageRef.child("pages").child(pageName)
     }
     

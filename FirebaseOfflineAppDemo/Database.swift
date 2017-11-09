@@ -13,11 +13,11 @@ import FirebaseDatabase
 
 class Database {
     
-    private static let databaseRef = FIRDatabase.database().reference()
+    private static let databaseRef = FirebaseDatabase.Database.database().reference()
     private static let eventsRef = databaseRef.child("events")
     
     static func setup() {
-        FIRDatabase.database().persistenceEnabled = true
+        FirebaseDatabase.Database.database().isPersistenceEnabled = true
     }
     
     static func events(completion: @escaping ([Event]) -> ()) {
